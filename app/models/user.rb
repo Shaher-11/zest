@@ -22,5 +22,5 @@ class User < ApplicationRecord
   validates :field_name, uniqueness: true
   validates :first_name, presence: true
   validates :username, presence: true
-
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end
