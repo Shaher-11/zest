@@ -8,4 +8,6 @@
 #  updated_at :datetime         not null
 #
 class Status < ApplicationRecord
+  validates :text, presence: true
+
 end
