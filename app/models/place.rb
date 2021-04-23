@@ -20,5 +20,8 @@ class Place < ApplicationRecord
   validates :coordinate, presence: true
   validates :locale, presence: true
   validates :name, presence: true
-
+  PLACE_TYPES = [
+    "restaurant", "coffee_shop", "mall",
+    "hotel", "other"].freeze
+  validates :place_type, inclusion: { in: PLACE_TYPES }
 end
