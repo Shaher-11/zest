@@ -33,5 +33,14 @@ RSpec.describe User, type: :model do
       user.email = "adam@example.org"
       expect(user.valid?).to be true
     end
+
+    it "is invalid if the email is taken" do
+      create_a_user(email: "adam@example.org")
+      user = User.new
+      user.email = "adam@example.org"
+      expect(user).not_to be_valid
+    end
+
   end
+
 end
