@@ -19,7 +19,6 @@
 class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :username, uniqueness: true
-  validates :field_name, uniqueness: true
   validates :first_name, presence: true
   validates :username, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
@@ -37,7 +36,7 @@ class User < ApplicationRecord
   has_many :followers,-> { where("bonds.state = ?", Bond::FOLLOWING) },through: :inward_bonds,source: :user
 
   before_save :ensure_proper_name_case
-  
+
   private
     def ensure_proper_name_case
       self.first_name = first_name.capitalize
