@@ -35,4 +35,11 @@ class User < ApplicationRecord
   source: :friend
   has_many :inward_bonds,class_name: "Bond",foreign_key: :friend_id
   has_many :followers,-> { where("bonds.state = ?", Bond::FOLLOWING) },through: :inward_bonds,source: :user
+
+  before_save :ensure_proper_name_case
+  
+  private
+    def ensure_proper_name_case
+      self.first_name = first_name.capitalize
+    end
 end
