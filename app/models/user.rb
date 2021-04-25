@@ -23,17 +23,22 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   has_many :posts
-  has_many :bonds 
+  has_many :bonds
+
   has_many :followings,
-  -> { where("bonds.state = ?", Bond::FOLLOWING) },
+  -> { Bond.following },
   through: :bonds,
   source: :friend
+
   has_many :follow_requests,
-  -> { where("bonds.state = ?", Bond::REQUESTING) },
+  -> { Bond.requesting },
   through: :bonds,
   source: :friend
   has_many :inward_bonds,class_name: "Bond",foreign_key: :friend_id
-  has_many :followers,-> { where("bonds.state = ?", Bond::FOLLOWING) },through: :inward_bonds,source: :user
+
+  has_many :followers,-> { Bond.following },
+  through: :inward_bonds,
+  source: :user
 
   before_save :ensure_proper_name_case
 
