@@ -1,0 +1,3 @@
+.body-session {
+  @apply bg-gray-100 font-sans h-screen w-screen;
+}
