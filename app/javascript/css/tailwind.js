@@ -8,7 +8,7 @@ module.exports = {
       },
       colors: {
         main: {
-          default: "#60b0e2",
+          default: "#5e2feb",
           "500": "#41a1dd",
         }
       },
