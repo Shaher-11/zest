@@ -62,6 +62,7 @@ class User < ApplicationRecord
       first_name
     end
   end
+  
   def profile_picture_url
     @profile_picture_url ||= begin
       hash = Digest::MD5.hexdigest(email)

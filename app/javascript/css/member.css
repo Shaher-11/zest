@@ -3,6 +3,7 @@
 .body-member {
   @apply bg-gray-100 font-sans;
 }
+
 .body-member
 .container {
   @apply mx-auto;
