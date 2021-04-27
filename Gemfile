@@ -20,6 +20,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.7', '>= 4.7.3'
 gem "letter_opener", :group => :development
+gem 'evil_icons', '~> 1.10', '>= 1.10.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -36,6 +37,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.0', '>= 5.0.1'
   gem 'factory_bot_rails', '~> 6.1'
+  gem 'better_errors', '~> 2.9', '>= 2.9.1'
 end
 
 group :development do
