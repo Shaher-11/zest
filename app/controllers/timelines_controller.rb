@@ -7,5 +7,7 @@ class TimelinesController < ApplicationController
   end
 
   def show
+    @posts = Post.written_by(params[:username]).not_reply.order("created_at DESC")
   end
+  
 end
