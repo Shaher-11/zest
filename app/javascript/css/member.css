@@ -1,5 +1,6 @@
 @import "member/nav";
 @import "member/timeline";
+@import "member/poster";
 .body-member {
   @apply bg-gray-100 font-sans;
 }
