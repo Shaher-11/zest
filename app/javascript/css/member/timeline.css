@@ -1,4 +1,9 @@
 .body-member
+.timeline {
+  @apply mt-2;
+}
+
+.body-member
 .timeline .line-group {
   @apply mb-2;
   @apply rounded overflow-hidden;
