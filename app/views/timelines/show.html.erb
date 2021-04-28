@@ -1,3 +1,7 @@
 <h1>Timelines#show</h1>
 <p>Find me in app/views/timelines/show.html.erb</p>
+<% if on_self? %>
+  <%= render("posts/form")  %>
+<% end %>
+
 <%= render "timelines/all" %>

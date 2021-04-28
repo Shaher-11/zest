@@ -31,5 +31,5 @@ class Post < ApplicationRecord
     joins(:user).where(users: {username: username})
   }
 
-  
+  attr_accessor :status_text
 end
