@@ -16,5 +16,5 @@ Things you may want to cover:
 
 * How to run the test suite
 
-* Services (job queues,cache ,ec)
+* Services (job queues,cache ,)
 
